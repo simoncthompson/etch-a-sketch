@@ -1,0 +1,19 @@
+#container {
+  width: 500px;
+  height: 500px;
+  border: 5px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: lightgrey;
+}
+
+.cell {
+  height: 5px;
+  width: 5px;
+  background:white;
+}
+
+.cell:hover {
+  background: black;
+}

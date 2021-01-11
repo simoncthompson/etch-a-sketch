@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Etch-A-Sketch</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <button onclick="clearAll()">Click</button>
+  <div id="container"></div>
+
+<script type="text/javascript" src = "script.js"></script>
+<script>
+  let gridSize = 10000; //set the grid size
+  let cell;
+  function makeRows() {
+    for (i = 0; i < gridSize; i++) {
+      cell = document.createElement("div");
+      cell.classList.add("cell");
+      container.appendChild(cell);
+    }
+  }
+
+makeRows();
+
+function clearAll() {
+  window.location.reload();
+}
+
+/*
+create cell
+create a row of 8 cells next to each other (divA with 8 nested divsB)
+create 8 rows, one under the other (8 x divA)
+*/
+</script>
+</body>
+</html>
