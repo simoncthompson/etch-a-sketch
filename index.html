@@ -23,6 +23,7 @@
       cell = document.createElement("div");
       cell.classList.add("cell");
       container.appendChild(cell);
+      // cell.addEventListener('click', event => {cell.id = "drawn"}); why won't this work?
       count++;
     }
   }
@@ -33,11 +34,10 @@ function clearAll() {
   window.location.reload();
 }
 
-/*
-create cell
-create a row of 8 cells next to each other (divA with 8 nested divsB)
-create 8 rows, one under the other (8 x divA)
-*/
+function changeToDrawn(element) {
+  element.classList.add("drawn");
+}
+
 </script>
 </body>
 </html>
