@@ -15,27 +15,28 @@
 <script type="text/javascript" src = "script.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-  let gridSize = 25600; //set the grid size
+  let gridSize = 100; //set the grid size
   let cell;
-  function makeRows() {
-    let count = 0;
+  function makeGrid() {
     for (i = 0; i < gridSize; i++) {
       cell = document.createElement("div");
       cell.classList.add("cell");
       container.appendChild(cell);
-      // cell.addEventListener('click', event => {cell.id = "drawn"}); why won't this work?
-      count++;
+      cell.addEventListener('mouseenter', event => {cell.classList.add = "drawn"});
     }
+    // container = document.querySelector("#container")
+    // allCells = container.querySelectorAll("div")
+    // allCells.forEach(cell => cell.addEventListener('mouseenter', changeToDrawn(cell)));
   }
 
-makeRows();
+makeGrid();
 
 function clearAll() {
   window.location.reload();
 }
 
-function changeToDrawn(element) {
-  element.classList.add("drawn");
+function changeToDrawn(cell) {
+  cell.style.backgroundColor = '#000000'
 }
 
 </script>
