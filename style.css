@@ -1,17 +1,12 @@
+.cell {
+  background: white;
+  border: 1px solid black;
+}
 #container {
-  width: 1000px;
-  height: 1000px;
   border: 2px solid black;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  background-color: lightgrey;
-}
-
-.cell {
-  height: 96px;
-  width: 96px;
-  background:white;
+  background-color: white;
 }
 
 .drawn {

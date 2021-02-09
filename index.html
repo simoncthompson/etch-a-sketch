@@ -9,34 +9,38 @@
 </head>
 
 <body>
-  <button onclick="clearAll()">Click</button>
+  <button onclick="clearAll()">Clear All</button>
   <div id="container"></div>
 
 <script type="text/javascript" src = "script.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+
+function makeGrid() {
   let gridSize = 100; //set the grid size
-  let cell;
-  function makeGrid() {
-    for (i = 0; i < gridSize; i++) {
-      cell = document.createElement("div");
-      cell.classList.add("cell");
-      container.appendChild(cell);
-      cell.addEventListener('mouseenter', event => {cell.classList.add = "drawn"});
-    }
-    // container = document.querySelector("#container")
-    // allCells = container.querySelectorAll("div")
-    // allCells.forEach(cell => cell.addEventListener('mouseenter', changeToDrawn(cell)));
+  let container = document.querySelector("#container");
+  container.style.width = (Math.sqrt(gridSize) * 100).toString() + "px";
+  container.style.height = (Math.sqrt(gridSize) * 100).toString() + "px";
+  for (i = 0; i < gridSize; i++) {
+  let cell = document.createElement("div");
+  cell.classList.add("cell");
+  cell.style.width = ((Math.sqrt(gridSize) * 10) -2).toString() + "px";
+  cell.style.height = ((Math.sqrt(gridSize) * 10) -2).toString() + "px";
+    container.appendChild(cell);
   }
+}
 
 makeGrid();
 
+cells = document.querySelectorAll(".cell");
+cells.forEach(cell => {
+  cell.addEventListener("mouseover", (e) => {
+  e.currentTarget.classList.add("drawn");
+  });
+})
+
+
 function clearAll() {
   window.location.reload();
-}
-
-function changeToDrawn(cell) {
-  cell.style.backgroundColor = '#000000'
 }
 
 </script>
