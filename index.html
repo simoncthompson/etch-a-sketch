@@ -15,29 +15,22 @@
 <script type="text/javascript" src = "script.js"></script>
 <script>
 
-function makeGrid() {
-  let gridSize = 100; //set the grid size
+function makeGrid(gridSize) {
   let container = document.querySelector("#container");
-  container.style.width = (Math.sqrt(gridSize) * 100).toString() + "px";
-  container.style.height = (Math.sqrt(gridSize) * 100).toString() + "px";
+  container.style.width = "1000px";
+  container.style.height = "1000px";
   for (i = 0; i < gridSize; i++) {
-  let cell = document.createElement("div");
-  cell.classList.add("cell");
-  cell.style.width = ((Math.sqrt(gridSize) * 10) -2).toString() + "px";
-  cell.style.height = ((Math.sqrt(gridSize) * 10) -2).toString() + "px";
+    let cell = document.createElement("div");
+    cell.classList.add("cell");
+    cell.style.width = (1000 / Math.sqrt(gridSize)).toString() + "px";
+    cell.style.height = (1000 / Math.sqrt(gridSize)).toString() + "px";
+    cell.addEventListener("mouseover", (e) => {
+      e.currentTarget.classList.add("drawn");
+      });
     container.appendChild(cell);
   }
 }
-
-makeGrid();
-
-cells = document.querySelectorAll(".cell");
-cells.forEach(cell => {
-  cell.addEventListener("mouseover", (e) => {
-  e.currentTarget.classList.add("drawn");
-  });
-})
-
+makeGrid(10000);
 
 function clearAll() {
   window.location.reload();
